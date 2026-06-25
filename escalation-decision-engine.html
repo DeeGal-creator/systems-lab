@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-slate-950 text-slate-200">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escalation Decision Engine | Systems Lab</title>
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body class="p-8 md:p-16 max-w-3xl mx-auto">
+    <a href="index.html" class="text-blue-500 hover:text-blue-300 font-mono text-sm underline underline-offset-4">← Back to Dashboard</a>
+    
+    <article class="mt-12">
+        <h1 class="text-4xl font-bold mb-2">Escalation Decision Engine</h1>
+        <a href="https://escalation-decision-engine.onrender.com" target="_blank"
+           class="inline-block mt-4 mb-8 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm rounded-lg transition-all shadow-lg shadow-blue-900/50">
+           🚀 Launch Live Demo
+        </a>
+        
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">The Bottleneck</h2>
+        <p class="text-slate-300 mb-8 leading-relaxed">
+            In Global Support, the biggest operational cost isn't case volume—it's escalation ambiguity. Consultants lack a structured way to determine whether a case should be Resolved, Reviewed, or Escalated, leading to inconsistent triage, unnecessary escalations, and missed signals. Traditional tooling focuses on information retrieval but provides no decision intelligence layer.
+        </p>
+        
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">The Architectural Solution</h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+            I built a <strong>weighted decision engine</strong> that integrates knowledge retrieval, historical pattern analysis, and risk scoring into a unified decision workspace. Rather than asking consultants to manually cross-reference documentation, case history, and escalation criteria, the system computes a single escalation score with full reasoning trace.
+        </p>
+        <ul class="text-slate-300 mb-8 list-disc list-inside space-y-2 leading-relaxed">
+            <li><strong>Dual-Mode Interface:</strong> Decision Workspace for frontline execution and Analyst View for transparency, diagnostics, and system-level insight.</li>
+            <li><strong>Weighted Scoring Model:</strong> Combines article escalation flags, match quality, historical escalation rates, high-risk language detection, and simple-resolution signals into a single 0–100 score.</li>
+            <li><strong>Explainable Output:</strong> Every recommendation includes a plain-language reasoning trace showing which factors drove the decision.</li>
+            <li><strong>Pattern Integration:</strong> Historical case data feeds escalation rate calculations and trend analysis, enabling the system to learn from past outcomes.</li>
+        </ul>
+        
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">Command Stack</h2>
+        <p class="text-blue-400 font-mono mb-12">Python | Streamlit | SQLite | Decision Logic | Explainable AI</p>
+        
+        <div class="bg-blue-900/20 border border-blue-900/50 p-6 rounded-lg">
+            <h3 class="text-blue-400 font-bold text-sm mb-2">Current Status</h3>
+            <p class="text-slate-400 text-sm italic">Prototype live with synthetic data. Production target integrates ServiceNow knowledge API, Darwin query execution, and CRM case history.</p>
+        </div>
+    </article>
+</body>
+</html>

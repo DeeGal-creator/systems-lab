@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Systems Lab | Deanna Gallimore</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/src/styles.css">
 </head>
 <body class="p-8 md:p-16 max-w-5xl mx-auto">
     
     <header class="mb-12 border-b border-slate-800 pb-8">
         <h1 class="text-5xl font-extrabold mb-4 tracking-tight">Deanna Gallimore</h1>
-        <p class="text-xl text-blue-500 font-mono tracking-widest uppercase">Principal Systems Architect | AI Product Engineer</p>
+        <p class="text-xl text-blue-500 font-mono tracking-widest uppercase">AI Systems Builder | Decision-Support Architect</p>
         
         <div class="mt-6 flex gap-6 text-xs font-mono">
             <span class="text-blue-400"><strong>(§)</strong> Production Pipeline</span>
@@ -24,112 +24,121 @@
         </div>
     </header>
 
-    <!-- Standardized the Grid to ensure uniform card height -->
     <main class="grid md:grid-cols-2 gap-6">
 
-       <!-- 1. SignalForge -->
-<article class="p-6 border border-slate-800 rounded-lg bg-slate-900 hover:border-blue-500 transition-all flex flex-col justify-between">
-    <div>
-        <h2 class="text-xl font-semibold mb-2"><a href="signalforge.html" class="hover:text-blue-400">SignalForge GTM <span class="text-xs text-blue-400">(§)</span></a></h2>
-        <p class="text-sm text-slate-400 mb-4"><strong>Bottleneck:</strong> Hidden risk in pipeline data and lack of AI auditability.</p>
-        <p class="text-sm text-slate-300 mb-4">Explainable agentic pipeline for CRM/Call reconciliation with full source-attribution and human-in-the-loop governance.</p>
-    </div>
-    <div class="flex flex-wrap items-center justify-between gap-4 mt-4 pt-4 border-t border-slate-800">
-        <div class="text-[10px] font-mono text-blue-300 leading-tight">Python | Agentic Workflow | GTM Ops</div>
-        <a href="signalforge.html" class="text-xs font-bold text-blue-500 hover:text-blue-300 uppercase tracking-widest whitespace-nowrap">View Dossier →</a>
-    </div>
-</article>
+        <!-- 1. SignalForge -->
+        <article class="p-6 border border-slate-800 rounded-lg bg-slate-900 hover:border-blue-500 transition-all flex flex-col justify-between">
+            <div>
+                <h2 class="text-xl font-semibold mb-2"><a href="signalforge.html" class="hover:text-blue-400">SignalForge GTM <span class="text-xs text-blue-400">(§)</span></a></h2>
+                <p class="text-sm text-slate-400 mb-4"><strong>Bottleneck:</strong> Hidden risk in pipeline data and lack of AI auditability.</p>
+                <p class="text-sm text-slate-300 mb-4">Explainable agentic pipeline for CRM/Call reconciliation with full source-attribution and human-in-the-loop governance.</p>
+            </div>
+            <div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-4 border-t border-slate-800">
+                <div class="text-[10px] font-mono text-blue-300 leading-tight">Python | Agentic Workflow | GTM Ops</div>
+                <div class="flex gap-2">
+                    <a href="https://signal-forge-gtm.onrender.com/" target="_blank" class="px-3 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded transition-all shadow-lg shadow-blue-900/50 whitespace-nowrap">View Demo →</a>
+                    <a href="signalforge.html" class="px-3 py-2 border border-slate-600 hover:border-blue-500 text-slate-300 hover:text-blue-400 font-bold text-xs rounded transition-all whitespace-nowrap">View Dossier →</a>
+                </div>
+            </div>
+        </article>
 
-<!-- 2. QQQ -->
-  <!-- 3. Quickfire Quadrant Quest -->
-<article class="p-6 border border-slate-800 rounded-lg bg-slate-900 hover:border-blue-500 transition-all flex flex-col justify-between">
-    <div>
-        <h2 class="text-xl font-semibold mb-2"><a href="qqq.html" class="hover:text-blue-400">Quickfire Quadrant Quest <span class="text-xs text-blue-400">(§)</span></a></h2>
-        <p class="text-sm text-slate-400 mb-4"><strong>Bottleneck:</strong> Organizational prioritization blindness and siloed enablement workflows.</p>
-        <p class="text-sm text-slate-300 mb-4">Multi-tenant decision-matrix platform tracking Kirkpatrick-aligned analytics to map behavior change to business outcomes.</p>
-    </div>
-    <div class="flex flex-wrap items-center justify-between gap-4 mt-4 pt-4 border-t border-slate-800">
-        <div class="text-[10px] font-mono text-blue-300 leading-tight">PostgreSQL | Drizzle | Express | React</div>
-        <a href="qqq.html" class="text-xs font-bold text-blue-500 hover:text-blue-300 uppercase tracking-widest whitespace-nowrap">View Dossier →</a>
-    </div>
-</article>
- <!-- Card Template Used for consistency -->
-        
-        <!-- 1. Trust Vector -->
+        <!-- 2. Escalation Decision Engine (Replaces Decision Intel) -->
+        <article class="p-6 border border-slate-800 rounded-lg bg-slate-900 hover:border-blue-500 transition-all flex flex-col justify-between">
+            <div>
+                <h2 class="text-xl font-semibold mb-2"><a href="escalation-decision-engine.html" class="hover:text-blue-400">Escalation Decision Engine <span class="text-xs text-blue-400">(§)</span></a></h2>
+                <p class="text-sm text-slate-400 mb-4"><strong>Bottleneck:</strong> Escalation ambiguity and inconsistent triage decisions.</p>
+                <p class="text-sm text-slate-300 mb-4">Weighted decision engine integrating knowledge retrieval, historical pattern analysis, and risk scoring into a unified workspace with dual-mode interface.</p>
+            </div>
+            <div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-4 border-t border-slate-800">
+                <div class="text-[10px] font-mono text-blue-300 leading-tight">Python | Streamlit | Decision Logic | Explainable AI</div>
+                <div class="flex gap-2">
+                    <a href="https://escalation-decision-engine.onrender.com" target="_blank" class="px-3 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded transition-all shadow-lg shadow-blue-900/50 whitespace-nowrap">View Demo →</a>
+                    <a href="escalation-decision-engine.html" class="px-3 py-2 border border-slate-600 hover:border-blue-500 text-slate-300 hover:text-blue-400 font-bold text-xs rounded transition-all whitespace-nowrap">View Dossier →</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 3. QQQ -->
+        <article class="p-6 border border-slate-800 rounded-lg bg-slate-900 hover:border-blue-500 transition-all flex flex-col justify-between">
+            <div>
+                <h2 class="text-xl font-semibold mb-2"><a href="qqq.html" class="hover:text-blue-400">Quickfire Quadrant Quest <span class="text-xs text-blue-400">(§)</span></a></h2>
+                <p class="text-sm text-slate-400 mb-4"><strong>Bottleneck:</strong> Organizational prioritization blindness and siloed enablement workflows.</p>
+                <p class="text-sm text-slate-300 mb-4">Multi-tenant decision-matrix platform tracking Kirkpatrick-aligned analytics to map behavior change to business outcomes.</p>
+            </div>
+            <div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-4 border-t border-slate-800">
+                <div class="text-[10px] font-mono text-blue-300 leading-tight">PostgreSQL | Drizzle | Express | React</div>
+                <div class="flex gap-2">
+                    <a href="https://quickfire-quadrant-quest.onrender.com" target="_blank" class="px-3 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded transition-all shadow-lg shadow-blue-900/50 whitespace-nowrap">View Demo →</a>
+                    <a href="qqq.html" class="px-3 py-2 border border-slate-600 hover:border-blue-500 text-slate-300 hover:text-blue-400 font-bold text-xs rounded transition-all whitespace-nowrap">View Dossier →</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 4. Trust Vector -->
         <article class="p-6 border border-slate-800 rounded-lg bg-slate-900 hover:border-blue-500 transition-all flex flex-col justify-between">
             <div>
                 <h2 class="text-xl font-semibold mb-2"><a href="trust-vector.html" class="hover:text-blue-400">Trust Vector Arcade <span class="text-xs text-blue-400">(§)</span></a></h2>
                 <p class="text-sm text-slate-400 mb-4"><strong>Bottleneck:</strong> Human error in high-pressure triage.</p>
                 <p class="text-sm text-slate-300 mb-4">Gamified simulation engine using L1–L4 telemetry to quantify decision accuracy.</p>
             </div>
-            <div class="flex flex-wrap items-center justify-between gap-4 mt-4 pt-4 border-t border-slate-800">
+            <div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-4 border-t border-slate-800">
                 <div class="text-[10px] font-mono text-blue-300 leading-tight">Netlify | JS | Telemetry</div>
-                <a href="trust-vector.html" class="text-xs font-bold text-blue-500 hover:text-blue-300 uppercase tracking-widest whitespace-nowrap">View Dossier →</a>
+                <div class="flex gap-2">
+                    <a href="https://trust-vector-arcade.netlify.app" target="_blank" class="px-3 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded transition-all shadow-lg shadow-blue-900/50 whitespace-nowrap">View Demo →</a>
+                    <a href="trust-vector.html" class="px-3 py-2 border border-slate-600 hover:border-blue-500 text-slate-300 hover:text-blue-400 font-bold text-xs rounded transition-all whitespace-nowrap">View Dossier →</a>
+                </div>
             </div>
         </article>
 
-        <!-- 2. Audit-Gate -->
+        <!-- 5. Audit-Gate -->
         <article class="p-6 border border-slate-800 rounded-lg bg-slate-900 hover:border-blue-500 transition-all flex flex-col justify-between">
             <div>
                 <h2 class="text-xl font-semibold mb-2"><a href="audit-gate.html" class="hover:text-blue-400">Audit-Gate Pipeline <span class="text-xs text-blue-400">(§)</span></a></h2>
                 <p class="text-sm text-slate-400 mb-4"><strong>Bottleneck:</strong> Non-deterministic AI outputs.</p>
                 <p class="text-sm text-slate-300 mb-4">CI/CD-integrated adversarial pipeline enforcing safety logic-gates.</p>
             </div>
-            <div class="flex flex-wrap items-center justify-between gap-4 mt-4 pt-4 border-t border-slate-800">
+            <div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-4 border-t border-slate-800">
                 <div class="text-[10px] font-mono text-blue-300 leading-tight">Python | Streamlit | Git</div>
-                <a href="audit-gate.html" class="text-xs font-bold text-blue-500 hover:text-blue-300 uppercase tracking-widest whitespace-nowrap">View Dossier →</a>
+                <a href="audit-gate.html" class="px-3 py-2 border border-slate-600 hover:border-blue-500 text-slate-300 hover:text-blue-400 font-bold text-xs rounded transition-all whitespace-nowrap">View Dossier →</a>
             </div>
         </article>
 
-        <!-- 4. Devotional -->
+        <!-- 6. Devotional -->
         <article class="p-6 border border-slate-800 rounded-lg bg-slate-900 hover:border-blue-500 transition-all flex flex-col justify-between">
             <div>
                 <h2 class="text-xl font-semibold mb-2"><a href="devotional.html" class="hover:text-blue-400">Devotional Intelligence Suite <span class="text-xs text-emerald-400">(®)</span></a></h2>
                 <p class="text-sm text-slate-400 mb-4"><strong>Bottleneck:</strong> Stagnant, passive spiritual content usage.</p>
                 <p class="text-sm text-slate-300 mb-4">A Gamified Discipleship Engine that treats spiritual growth as a high-stakes quest. Orchestrates RAG-based biblical application.</p>
             </div>
-            <div class="flex flex-wrap items-center justify-between gap-4 mt-4 pt-4 border-t border-slate-800">
+            <div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-4 border-t border-slate-800">
                 <div class="text-[10px] font-mono text-emerald-300 leading-tight">React / Vite | Supabase | LangChain.js</div>
-                <a href="devotional.html" class="text-xs font-bold text-blue-500 hover:text-blue-300 uppercase tracking-widest whitespace-nowrap">View Dossier →</a>
+                <a href="devotional.html" class="px-3 py-2 border border-slate-600 hover:border-blue-500 text-slate-300 hover:text-blue-400 font-bold text-xs rounded transition-all whitespace-nowrap">View Dossier →</a>
             </div>
         </article>
 
-        <!-- 5. Silas-Creed -->
+        <!-- 7. Silas-Creed -->
         <article class="p-6 border border-slate-800 rounded-lg bg-slate-900 hover:border-blue-500 transition-all flex flex-col justify-between">
             <div>
                 <h2 class="text-xl font-semibold mb-2"><a href="silas-creed.html" class="hover:text-blue-400">Silas-Creed Architecture <span class="text-xs text-emerald-400">(®)</span></a></h2>
                 <p class="text-sm text-slate-400 mb-4"><strong>Bottleneck:</strong> Narrative state-drift in 500k+ word IP.</p>
                 <p class="text-sm text-slate-300 mb-4">Relational state-machine tracking plot-critical flags for canonical consistency.</p>
             </div>
-            <div class="flex flex-wrap items-center justify-between gap-4 mt-4 pt-4 border-t border-slate-800">
+            <div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-4 border-t border-slate-800">
                 <div class="text-[10px] font-mono text-emerald-300 leading-tight">Airtable | Git | VS Code</div>
-                <a href="silas-creed.html" class="text-xs font-bold text-blue-500 hover:text-blue-300 uppercase tracking-widest whitespace-nowrap">View Dossier →</a>
+                <a href="silas-creed.html" class="px-3 py-2 border border-slate-600 hover:border-blue-500 text-slate-300 hover:text-blue-400 font-bold text-xs rounded transition-all whitespace-nowrap">View Dossier →</a>
             </div>
         </article>
 
-        <!-- 6. Decision Intel -->
-        <article class="p-6 border border-slate-800 rounded-lg bg-slate-900 hover:border-blue-500 transition-all flex flex-col justify-between">
-            <div>
-                <h2 class="text-xl font-semibold mb-2"><a href="decision-intel.html" class="hover:text-blue-400">Decision Intelligence Framework <span class="text-xs text-blue-400">(§)</span></a></h2>
-                <p class="text-sm text-slate-400 mb-4"><strong>Bottleneck:</strong> Tribal knowledge silos in support ops.</p>
-                <p class="text-sm text-slate-300 mb-4">Strategy-pattern pipeline normalizing fragmented docs into executable flowcharts.</p>
-            </div>
-            <div class="flex flex-wrap items-center justify-between gap-4 mt-4 pt-4 border-t border-slate-800">
-                <div class="text-[10px] font-mono text-blue-300 leading-tight">Node.js | TypeScript</div>
-                <a href="decision-intel.html" class="text-xs font-bold text-blue-500 hover:text-blue-300 uppercase tracking-widest whitespace-nowrap">View Dossier →</a>
-            </div>
-        </article>
-
-        <!-- 7. Remi -->
+        <!-- 8. Remi -->
         <article class="p-6 border border-slate-800 rounded-lg bg-slate-900 hover:border-blue-500 transition-all flex flex-col justify-between">
             <div>
                 <h2 class="text-xl font-semibold mb-2"><a href="remi.html" class="hover:text-blue-400">Remi: The Refiner’s Quest <span class="text-xs text-emerald-400">(®)</span></a></h2>
                 <p class="text-sm text-slate-400 mb-4"><strong>Bottleneck:</strong> Need for high-integrity formation.</p>
                 <p class="text-sm text-slate-300 mb-4">Modular RPG engine using recursive gameLoops and Euclidean state-management.</p>
             </div>
-            <div class="flex flex-wrap items-center justify-between gap-4 mt-4 pt-4 border-t border-slate-800">
+            <div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-4 border-t border-slate-800">
                 <div class="text-[10px] font-mono text-emerald-300 leading-tight">JS | Canvas API | GitHub</div>
-                <a href="remi.html" class="text-xs font-bold text-blue-500 hover:text-blue-300 uppercase tracking-widest whitespace-nowrap">View Dossier →</a>
+                <a href="remi.html" class="px-3 py-2 border border-slate-600 hover:border-blue-500 text-slate-300 hover:text-blue-400 font-bold text-xs rounded transition-all whitespace-nowrap">View Dossier →</a>
             </div>
         </article>
 
