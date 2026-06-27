@@ -18,26 +18,38 @@
         
         <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">The Bottleneck</h2>
         <p class="text-slate-300 mb-8 leading-relaxed">
-            In Global Support, the biggest operational cost isn't case volume—it's escalation ambiguity. Consultants lack a structured way to determine whether a case should be Resolved, Reviewed, or Escalated, leading to inconsistent triage, unnecessary escalations, and missed signals. Traditional tooling focuses on information retrieval but provides no decision intelligence layer.
+            In Global Support, the biggest operational cost isn't case volume—it's escalation ambiguity. Consultants lack a structured way to determine whether a case should be Resolved, Reviewed, or Escalated, leading to inconsistent triage, unnecessary escalations, and missed signals. Traditional tooling focuses on information retrieval but provides no decision intelligence layer — and no feedback loop to measure whether recommendations are actually followed or effective.
         </p>
         
         <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">The Architectural Solution</h2>
         <p class="text-slate-300 mb-6 leading-relaxed">
-            I built a <strong>weighted decision engine</strong> that integrates knowledge retrieval, historical pattern analysis, and risk scoring into a unified decision workspace. Rather than asking consultants to manually cross-reference documentation, case history, and escalation criteria, the system computes a single escalation score with full reasoning trace.
+            I built a <strong>weighted decision engine</strong> that integrates knowledge retrieval, historical pattern analysis, and risk scoring into a unified decision workspace with a closed feedback loop. Rather than asking consultants to manually cross-reference documentation, case history, and escalation criteria, the system computes a single escalation score with full reasoning trace — and then tracks whether the recommendation was followed and what the outcome was.
         </p>
         <ul class="text-slate-300 mb-8 list-disc list-inside space-y-2 leading-relaxed">
             <li><strong>Dual-Mode Interface:</strong> Decision Workspace for frontline execution and Analyst View for transparency, diagnostics, and system-level insight.</li>
+            <li><strong>End-to-End Case Tracking:</strong> Each analyzed case now carries a case number, enabling tracking from intake to outcome for reporting and auditability.</li>
+            <li><strong>Post-Recommendation Follow-Through:</strong> After receiving a recommendation, users record whether they followed it, what the actual outcome was (resolve, escalate, review), and optionally add notes — with stronger guidance when the recommendation is not followed.</li>
+            <li><strong>Workflow Outcomes Tab:</strong> A dedicated operational view with KPI cards (follow rate, override rate, resolution rate), action breakdown chart, recent follow-through records table, and filters for Category, Recommendation, and Followed Recommendation — plus CSV export for BI handoff.</li>
             <li><strong>Weighted Scoring Model:</strong> Combines article escalation flags, match quality, historical escalation rates, high-risk language detection, and simple-resolution signals into a single 0–100 score.</li>
             <li><strong>Explainable Output:</strong> Every recommendation includes a plain-language reasoning trace showing which factors drove the decision.</li>
             <li><strong>Pattern Integration:</strong> Historical case data feeds escalation rate calculations and trend analysis, enabling the system to learn from past outcomes.</li>
         </ul>
+
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">Key Upgrades (v0.2)</h2>
+        <ul class="text-slate-300 mb-8 list-disc list-inside space-y-2 leading-relaxed">
+            <li>Case number intake added for end-to-end tracking and reporting.</li>
+            <li>Post-recommendation feedback capture (followed? outcome? reason/notes) with conditional outcome paths.</li>
+            <li>Dedicated Workflow Outcomes tab with KPI cards, action breakdown, filterable records, and CSV export.</li>
+            <li>Seeded demo data for immediate populated experience in Walkthrough Mode.</li>
+            <li>Python compatibility fix (Optional over union syntax) for broader interpreter support.</li>
+        </ul>
         
         <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">Command Stack</h2>
-        <p class="text-blue-400 font-mono mb-12">Python | Streamlit | SQLite | Decision Logic | Explainable AI</p>
+        <p class="text-blue-400 font-mono mb-12">Python | Streamlit | SQLite | Decision Logic | Explainable AI | BI-Ready Export</p>
         
         <div class="bg-blue-900/20 border border-blue-900/50 p-6 rounded-lg">
             <h3 class="text-blue-400 font-bold text-sm mb-2">Current Status</h3>
-            <p class="text-slate-400 text-sm italic">Prototype live with synthetic data. Production target integrates ServiceNow knowledge API, Darwin query execution, and CRM case history.</p>
+            <p class="text-slate-400 text-sm italic">Prototype live with synthetic data and full follow-through tracking. Production target integrates ServiceNow knowledge API, Darwin query execution, and CRM case history.</p>
         </div>
     </article>
 </body>

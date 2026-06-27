@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-slate-950 text-slate-200">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enablement Command Center | Systems Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-8 md:p-16 max-w-3xl mx-auto">
+    <a href="index.html" class="text-blue-500 hover:text-blue-300 font-mono text-sm underline underline-offset-4">← Back to Dashboard</a>
+    
+    <article class="mt-12">
+        <h1 class="text-4xl font-bold mb-2">Enablement Command Center</h1>
+        <p class="text-slate-400 mb-8">Enterprise enablement command center — one workspace for program lifecycle management, collaborative execution, and executive reporting.</p>
+        
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">The Bottleneck</h2>
+        <p class="text-slate-300 mb-8 leading-relaxed">
+            Enablement work was scattered across plans, tasks, metrics, artifacts, and status narratives, making it impossible for program owners and collaborators to see what was blocked, what was due, and what needed executive attention. Teams managed work in documents, spreadsheets, and chat threads — no single source of truth for program health.
+        </p>
+        
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">The Architectural Solution</h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+            A unified enablement command center that moves teams from fragmented coordination to structured program governance. Built as a Power Apps Canvas application with a React + TypeScript architecture, the system enforces lifecycle discipline while remaining flexible enough to adapt to different lines of business.
+        </p>
+        <ul class="text-slate-300 mb-8 list-disc list-inside space-y-2 leading-relaxed">
+            <li><strong>Program Dashboard:</strong> Portfolio overview with health scores, task completion rates, KPI tracking, at-risk alerts, stalled phase detection, and reporting readiness — all at a glance.</li>
+            <li><strong>Program Workspace:</strong> Detail pages with lifecycle phases, tasks, metrics, artifacts, ownership, collaborators, and progress tracking per program.</li>
+            <li><strong>Task Manager:</strong> Phase-based task board with filtered views by owner, status, and type. Due dates, ownership, and blocked/completed/in-progress states are first-class citizens.</li>
+            <li><strong>Program Intake:</strong> Structured form flow for creating new programs — owner, priority, objective, launch date, success metrics — with auto-generated lifecycle phases and tasks.</li>
+            <li><strong>Metrics Dashboard:</strong> Cross-program KPI tracking with target vs. current performance, trend labels, and reporting-focused views.</li>
+            <li><strong>Narrative Generator:</strong> Turns program status, phases, tasks, risks, and KPIs into executive-ready summaries — no more manual status decks.</li>
+            <li><strong>Personalization:</strong> Uses Power Apps user context to surface relevant and shared programs based on the authenticated user.</li>
+        </ul>
+        
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">Command Stack</h2>
+        <div class="text-blue-400 font-mono mb-12 space-y-1">
+            <p>Power Apps Canvas | React | TypeScript</p>
+            <p>Vite | TanStack Query | Jotai</p>
+            <p>Tailwind CSS v4 | shadcn/ui | Lucide Icons</p>
+            <p>Dataverse-modeled schema | Power Apps SDK</p>
+        </div>
+        
+        <div class="bg-blue-900/20 border border-blue-900/50 p-6 rounded-lg">
+    <h3 class="text-blue-400 font-bold text-sm mb-2">Current Status</h3>
+    <p class="text-slate-400 text-sm italic">Architecture defined, modules built. Screenshots and walkthrough coming soon. Planned: Planner/Tasks by Planner integration for collaborative task sync, and external API wiring for real-time metric ingestion.</p>
+</div>
+    </article>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-slate-950 text-slate-200">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breadcrumbs | Systems Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-8 md:p-16 max-w-3xl mx-auto">
+    <a href="index.html" class="text-blue-500 hover:text-blue-300 font-mono text-sm underline underline-offset-4">← Back to Dashboard</a>
+    
+    <article class="mt-12">
+        <h1 class="text-4xl font-bold mb-2">Breadcrumbs</h1>
+        <p class="text-lg text-slate-400 italic mb-8">A guided builder concierge. From idea to build — one breadcrumb at a time.</p>
+        
+        <div class="flex flex-wrap gap-2 mb-8">
+            <span class="text-[10px] font-mono text-blue-300 bg-blue-900/30 px-2 py-1 rounded">v0.1</span>
+            <span class="text-[10px] font-mono text-emerald-300 bg-emerald-900/30 px-2 py-1 rounded">Shipped to internal review</span>
+            <span class="text-[10px] font-mono text-amber-300 bg-amber-900/30 px-2 py-1 rounded">~10 hour build</span>
+        </div>
+        
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">The Problem</h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+            Inside most enterprises, there's a quiet bottleneck killing internal innovation: non-technical employees have ideas but no idea how to build them. The internal builder ecosystem is dense — 10–15 approved tools across no-code platforms, low-code app builders, AI agent platforms, IDE-based code-first tools, workflow automation, and BI/dashboarding. Each tool has its own access path, governance rules, skill floor, and data classification limits.
+        </p>
+        <p class="text-slate-300 mb-8 leading-relaxed">
+            The result: employees give up on ideas, build in the wrong tool and hit a wall mid-project, burn weeks chasing unnecessary access, or build something non-compliant. Generic AI chatbots make it worse — they recommend tools outside the approved catalog, invent access paths, and skip governance entirely.
+        </p>
+        
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">The Solution</h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+            A guided builder concierge that walks any employee — non-technical or experienced — step by step from "I have an idea" to "I have a working build," using only enterprise-approved tools, with governance baked in at every step. Named Breadcrumbs after the Hansel and Gretel fairy tale — because the agent's job is to leave a clear trail so users never get lost in the builder forest.
+        </p>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+            Unlike generic chatbots, Breadcrumbs answers four harder questions:
+        </p>
+        <ol class="text-slate-300 mb-8 list-decimal list-inside space-y-2 leading-relaxed">
+            <li>What's the right-sized build for my idea?</li>
+            <li>Which approved tool fits — and which don't?</li>
+            <li>What's going to block me, and how do I get unblocked?</li>
+            <li>How do I move forward safely (governance, data classification, permissions)?</li>
+        </ol>
+        
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">Architecture</h2>
+        <div class="bg-slate-900 border border-slate-700 p-4 rounded-lg mb-8 font-mono text-xs text-slate-300 leading-relaxed whitespace-pre">
+┌──────────────────────────────────────────────────────┐
+│  ENTERPRISE COPILOT CHAT (Agent Surface)             │
+│  - Native to every employee in the org               │
+│  - SSO + identity inherited (per-user audit logs)    │
+│  - Zero deployment overhead                          │
+└──────────────────────────────────────────────────────┘
+                       │
+                       ▼
+┌──────────────────────────────────────────────────────┐
+│  AGENT BRAIN (Hardened Instructions)                 │
+│  - Identity + role statement                         │
+│  - Source rule (knowledge-source only, stateless)    │
+│  - Intake order enforcement (8 questions, in order)  │
+│  - Tool catalog grounding (no invention)             │
+│  - Length cap + opening rotation                     │
+│  - Artifact discipline (template-locked outputs)     │
+│  - Edge case routing                                 │
+└──────────────────────────────────────────────────────┘
+                       │
+                       ▼
+┌──────────────────────────────────────────────────────┐
+│  KNOWLEDGE SOURCE (Single .docx, versioned)          │
+│  ├─ Section 1: Right-Sizer Decision Tree             │
+│  ├─ Section 2: Approved Tool Catalog (~12 tools)     │
+│  ├─ Section 3: Governance + Permission Map           │
+│  └─ Section 4: Artifact Templates                    │
+│         (PRD, Architecture, Build Plan, Access Req)  │
+└──────────────────────────────────────────────────────┘
+                       │
+                       ▼
+┌──────────────────────────────────────────────────────┐
+│  OUTPUTS (User-driven, one at a time)                │
+│  - Right-sized tool recommendation                   │
+│  - PRD-Lite                                          │
+│  - Plain-English architecture                        │
+│  - Click-by-click build plan                         │
+│  - Pre-drafted access request message                │
+└──────────────────────────────────────────────────────┘
+        </div>
+        
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">Key Architectural Decisions</h2>
+        <div class="overflow-x-auto mb-8">
+            <table class="text-sm text-slate-300 border-collapse w-full">
+                <thead>
+                    <tr class="border-b border-slate-700">
+                        <th class="text-left py-2 pr-4 text-blue-400 font-semibold">Decision</th>
+                        <th class="text-left py-2 text-slate-400 font-semibold">Why</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-slate-800">
+                        <td class="py-3 pr-4 align-top font-medium">Declarative agent on enterprise Copilot Chat</td>
+                        <td class="py-3 align-top">Native access for every employee, zero deployment friction, SSO inherited, fast iteration</td>
+                    </tr>
+                    <tr class="border-b border-slate-800">
+                        <td class="py-3 pr-4 align-top font-medium">Single-doc knowledge source</td>
+                        <td class="py-3 align-top">One file = single source of truth = easy to update without retraining anything</td>
+                    </tr>
+                    <tr class="border-b border-slate-800">
+                        <td class="py-3 pr-4 align-top font-medium">Stateless by design</td>
+                        <td class="py-3 align-top">Every session starts fresh — no Graph context, no people lookup, no file searching. Trust + governance over personalization</td>
+                    </tr>
+                    <tr class="border-b border-slate-800">
+                        <td class="py-3 pr-4 align-top font-medium">Deterministic right-sizer + LLM artifact gen</td>
+                        <td class="py-3 align-top">Tool recommendation is rules-based for accuracy; artifact generation uses LLM for natural language. Best of both worlds</td>
+                    </tr>
+                    <tr class="border-b border-slate-800">
+                        <td class="py-3 pr-4 align-top font-medium">No invented tools</td>
+                        <td class="py-3 align-top">Hard-coded approved catalog. Agent must redirect users away from non-approved or deprecated tools</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pr-4 align-top font-medium">User-driven artifact delivery</td>
+                        <td class="py-3 align-top">One artifact per response, user picks the order. Solves UX and performance simultaneously</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">What I Built</h2>
+        <ul class="text-slate-300 mb-8 list-disc list-inside space-y-2 leading-relaxed">
+            <li>A 4-section knowledge source (~6,000 words) covering the full enterprise builder ecosystem — approved tools, governance rules, deprecated tools to redirect from, and 4 artifact templates</li>
+            <li>An 8-question structured intake that doubles as a governance check (data classification is the gate question — required before any recommendation)</li>
+            <li>A hardened instructions block (~7,200 characters) enforcing pacing, grounding, length, tone, and edge cases — solved real drift issues like agent inventing tools and pulling unintended personal context</li>
+            <li>A brand: name, tagline, visual identity (storybook illustration icon), and a fairy-tale-anchored narrative that gave the agent a personality leadership wanted to share</li>
+            <li>A demo-ready agent that walks users from idea → recommendation → artifacts in roughly 30 minutes per session</li>
+        </ul>
+        
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">Lessons Learned</h2>
+        <ul class="text-slate-300 mb-8 list-disc list-inside space-y-2 leading-relaxed">
+            <li><strong>Grounding > intelligence.</strong> The agent doesn't need to be smart — it needs to refuse to be wrong. Strict source rules + an approved catalog beat any fancy reasoning.</li>
+            <li><strong>Instructions are the product.</strong> The knowledge source matters, but the instructions block is where the personality, pacing, and trust live.</li>
+            <li><strong>Stateless is a feature.</strong> Once I framed Breadcrumbs as a concierge (fresh every session) instead of a memory-based assistant, every governance question got easier.</li>
+            <li><strong>Brand is part of the build.</strong> Naming it Breadcrumbs (not "BuilderBot") gave the agent a story. That story is what made the demo land.</li>
+            <li><strong>Constraints make better products.</strong> A 10-hour deadline, an 8,000-character instructions cap, and a 12-tool catalog forced sharper decisions than a 6-week timeline would have.</li>
+        </ul>
+        
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">Command Stack</h2>
+        <div class="text-blue-400 font-mono mb-12 space-y-1">
+            <p>Enterprise Copilot Chat (Declarative Agent) | Hardened Instructions Block</p>
+            <p>Single-Doc Knowledge Source | Decision Tree Logic</p>
+            <p>LLM Artifact Generation | Template-Locked Outputs</p>
+        </div>
+        
+        <div class="bg-blue-900/20 border border-blue-900/50 p-6 rounded-lg">
+            <h3 class="text-blue-400 font-bold text-sm mb-2">Current Status</h3>
+            <p class="text-slate-400 text-sm italic">v0.1 shipped to internal review, rolling out to first enablement team. Video demo coming soon. v0.2 planned: tighter artifact templates, automated ticket creation, and companion agents in the fairy-tale family.</p>
+        </div>
+    </article>
+</body>
+</html>
