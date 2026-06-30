@@ -6,28 +6,127 @@
     <title>Trust Vector Arcade | Systems Lab</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="p-12 max-w-3xl mx-auto">
-    <a href="index.html" class="text-blue-500 hover:text-blue-300 font-mono">← Back to Dashboard</a>
+<body class="p-8 md:p-16 max-w-3xl mx-auto">
+    <a href="index.html" class="text-amber-400 hover:text-amber-300 font-mono text-sm underline underline-offset-4">← Back to Dashboard</a>
     
     <article class="mt-12">
-        <h1 class="text-4xl font-bold mb-2">Trust Vector Arcade</h1>
-        <a href="https://trust-vector-arcade.netlify.app" target="_blank"
-           class="inline-block mt-4 mb-8 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm rounded-lg transition-all shadow-lg shadow-blue-900/50">
-           🚀 Launch Live Demo
-        </a>
-        
-        <h2 class="text-sm uppercase text-slate-500 font-bold tracking-widest mb-2">The Bottleneck</h2>
-        <p class="text-slate-300 mb-8 leading-relaxed">
-            High-pressure support environments currently suffer from "triage drift" and catastrophic human error. Manual diagnostic protocols are often too fragmented and slow to keep pace with volatile policy changes, leading to inconsistent outputs where speed is prioritized over logic-integrity.
+        <h1 class="text-4xl font-bold mb-2 text-amber-300">Trust Vector Arcade</h1>
+        <p class="text-lg text-slate-400 italic mb-8">Educational browser-based mini-arcade. Train to identify AI hallucinations, bias, and privacy risks — one scenario at a time.</p>
+
+        <div class="flex flex-wrap gap-2 mb-8">
+            <span class="text-[10px] font-mono text-amber-300 bg-amber-900/30 px-2 py-1 rounded">HTML / CSS / Vanilla JS</span>
+            <span class="text-[10px] font-mono text-amber-300 bg-amber-900/30 px-2 py-1 rounded">Web Audio API</span>
+            <span class="text-[10px] font-mono text-amber-300 bg-amber-900/30 px-2 py-1 rounded">Scenario-Driven</span>
+            <span class="text-[10px] font-mono text-amber-300 bg-amber-900/30 px-2 py-1 rounded">Kirkpatrick Telemetry</span>
+        </div>
+
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">The Bottleneck</h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+            Responsible AI training is typically delivered as static slide decks or compliance modules that employees click through without retention. There's no way to measure whether a person can actually <em>identify</em> a hallucination, bias, or privacy risk in real time — or whether they'll remember the right remediation when it matters. The gap between "I completed the training" and "I can spot an AI failure mode" is wide and unmeasured.
         </p>
-        
-        <h2 class="text-sm uppercase text-slate-500 font-bold tracking-widest mb-2">The Architectural Solution</h2>
-        <p class="text-slate-300 mb-8 leading-relaxed">
-            I engineered a web-based, event-driven simulation engine (Netlify/JS) specifically designed to stress-test high-stakes decision logic. By instrumenting the application with granular, session-level telemetry (using the Kirkpatrick L1–L4 impact model), I transformed standard training into a diagnostic sandbox. The system maps user-triage responses against validated "truth-data" to quantitatively benchmark decision-accuracy, isolate systemic error patterns, and identify where the "Human Firewall" is weakest. It does not just train; it provides the data required to re-engineer the underlying diagnostic flowcharts.
+
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">The Solution</h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+            Trust Vector Arcade is a browser-based mini-arcade that turns Responsible AI training into scenario-driven gameplay. Players navigate a retro-styled lobby, select a mission, and then make categorical remediation decisions (Accept / Bias / Hallucination or Safe / PII / Sensitive) when data nodes trigger scenarios mid-gameplay. Each scenario carries embedded rationale and guidance so the act of playing doubles as micro-training.
         </p>
-        
-        <h2 class="text-sm uppercase text-slate-500 font-bold tracking-widest mb-2">Command Stack</h2>
-        <p class="text-blue-400 font-mono mb-12">Netlify | JavaScript | Telemetry | Kirkpatrick L1–L4 Modeling</p>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+            The architecture is deliberately lightweight — plain HTML, CSS, and vanilla JavaScript with Web Audio for retro synth SFX. No framework overhead. The game loop runs a projection-based rendering pipeline that spawns data nodes and obstacles; collecting a node triggers a scenario modal. The player's decision is logged with immediate feedback explaining the correct choice, and missed scenarios can be re-run in a calibration round.
+        </p>
+
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">Architecture</h2>
+        <div class="overflow-x-auto mb-8">
+            <table class="text-sm text-slate-300 border-collapse w-full">
+                <thead>
+                    <tr class="border-b border-slate-700">
+                        <th class="text-left py-2 pr-6 text-amber-400 font-semibold">Layer</th>
+                        <th class="text-left py-2 text-slate-400 font-semibold">Implementation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-slate-800">
+                        <td class="py-3 pr-6 align-top font-medium">Lobby</td>
+                        <td class="py-3 align-top">index.html + js/lobby.js — mission selection hub</td>
+                    </tr>
+                    <tr class="border-b border-slate-800">
+                        <td class="py-3 pr-6 align-top font-medium">Gameplay</td>
+                        <td class="py-3 align-top">cabinet-dispatcher/game.js — projection-based rendering loop, data node spawning, obstacle collision</td>
+                    </tr>
+                    <tr class="border-b border-slate-800">
+                        <td class="py-3 pr-6 align-top font-medium">Scenario Engine</td>
+                        <td class="py-3 align-top">js/scenarios.js — categorical decision rules with embedded rationale and guidance</td>
+                    </tr>
+                    <tr class="border-b border-slate-800">
+                        <td class="py-3 pr-6 align-top font-medium">Session & Telemetry</td>
+                        <td class="py-3 align-top">js/session.js — client-side session store tracking first-try vs calibrated mastery; tracking.js posts form-style telemetry to Netlify</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pr-6 align-top font-medium">Audio</td>
+                        <td class="py-3 align-top">Web Audio API for synth SFX + HTML5 Audio for music tracks</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">Key Decisions</h2>
+        <div class="overflow-x-auto mb-8">
+            <table class="text-sm text-slate-300 border-collapse w-full">
+                <thead>
+                    <tr class="border-b border-slate-700">
+                        <th class="text-left py-2 pr-6 text-amber-400 font-semibold">Decision</th>
+                        <th class="text-left py-2 text-slate-400 font-semibold">Why</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-slate-800">
+                        <td class="py-3 pr-6 align-top font-medium">No framework — plain vanilla JS</td>
+                        <td class="py-3 align-top">Zero dependency overhead. The game needed to be portable and deployable anywhere, including air-gapped environments.</td>
+                    </tr>
+                    <tr class="border-b border-slate-800">
+                        <td class="py-3 pr-6 align-top font-medium">Scenario definitions as data, not logic</td>
+                        <td class="py-3 align-top">Scenarios are purely declarative objects with rationale embedded. Adding new scenarios requires no code changes — just a new JSON-shaped entry.</td>
+                    </tr>
+                    <tr class="border-b border-slate-800">
+                        <td class="py-3 pr-6 align-top font-medium">Client-side telemetry with Netlify POST</td>
+                        <td class="py-3 align-top">No backend required for v0.1. Session data is composed client-side and posted as a form submission. Swappable to a JSON endpoint later.</td>
+                    </tr>
+                    <tr class="border-b border-slate-800">
+                        <td class="py-3 pr-6 align-top font-medium">Calibration loop for missed scenarios</td>
+                        <td class="py-3 align-top">Players who miss a scenario can re-run it in calibration mode. This produces L3 (learning) and L4 (mastery) scores — not just pass/fail.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">Telemetry & Learning Metrics</h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+            Every session generates a structured report with Kirkpatrick-aligned fields:
+        </p>
+        <ul class="text-slate-300 mb-8 list-disc list-inside space-y-2 leading-relaxed">
+            <li><strong>L1 (Reaction):</strong> Player engagement and time spent</li>
+            <li><strong>L2 (Learning):</strong> First-try scenario accuracy — initial knowledge baseline</li>
+            <li><strong>L3 (Behavior):</strong> Calibration result — did the player learn from their mistakes?</li>
+            <li><strong>L4 (Results):</strong> Mastery score and efficiency (time-to-correct across sessions)</li>
+        </ul>
+        <p class="text-slate-400 mb-8 text-sm italic">
+            The final JSON report includes sessionID, gameName, l1_reaction, l2_initial_score, l3_calibrationResult, l4_timeSpent, and roi_efficiency.
+        </p>
+
+        <h2 class="text-xs uppercase text-slate-500 font-bold tracking-widest mb-2">Command Stack</h2>
+        <div class="text-amber-400 font-mono mb-6">
+            <p>HTML · CSS · Vanilla JavaScript (ES6+) · Web Audio API · Netlify Forms · Scenario-Driven Telemetry</p>
+        </div>
+
+        <div class="flex gap-4 mb-8">
+            <a href="https://trust-vector-arcade.netlify.app" target="_blank" class="px-5 py-3 bg-amber-600 hover:bg-amber-500 text-white font-bold text-sm rounded transition-all shadow-lg shadow-amber-900/50">Play Arcade →</a>
+            <a href="index.html" class="px-5 py-3 border border-slate-600 hover:border-amber-500 text-slate-300 hover:text-amber-400 font-bold text-sm rounded transition-all">← Back to Dashboard</a>
+        </div>
+
+        <div class="bg-amber-900/20 border border-amber-900/50 p-6 rounded-lg">
+            <h3 class="text-amber-400 font-bold text-sm mb-2">Status</h3>
+            <p class="text-slate-400 text-sm italic">
+                v0.1 live. Session telemetry posting to Netlify. Next: structured scenario metadata with provenance links, JSON endpoint replacement, and SVG-exported architecture diagram.
+            </p>
+        </div>
     </article>
 </body>
 </html>
